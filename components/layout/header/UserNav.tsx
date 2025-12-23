@@ -33,7 +33,7 @@ const UserNav = () => {
                             />
                         ) : (
                             // ✨ Fallback avatar with initials
-                            <div className="h-9 w-9 rounded-full border bg-gradient-to-r from-[#424794] to-[#a2bf62] flex items-center justify-center text-white text-lg font-semibold">
+                            <div className="h-8 w-8 rounded-full border bg-gradient-to-r from-[#424794] to-[#a2bf62] flex items-center justify-center text-white text-lg font-semibold">
                                 {mockUser?.name
                                     ?.split(" ")
                                     .map((n: any) => n[0])

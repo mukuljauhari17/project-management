@@ -22,7 +22,7 @@ const WorkspaceIdlayout = async ({ children, params }: Props) => {
           <AppSidebarContainer />
           <main className="w-full overflow-y-auto min-h-screen  ">
             <Header />
-            <div className="p-0 md:p-4 pt-2 ">
+            <div className="p-4 md:p-6 pt-2 ">
               {children}
             </div>
           </main>

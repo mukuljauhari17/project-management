@@ -2,80 +2,51 @@
 
 import {
   SidebarGroup,
-  SidebarGroupLabel,
   SidebarMenu,
   SidebarMenuButton,
   SidebarMenuItem,
   useSidebar,
 } from "../../ui/sidebar";
 import {
-  CheckSquare,
-  ClipboardList,
   LayoutDashboard,
   ListTodo,
-  Settings,
-  Users,
   LogOut,
   Home,
   File,
-  GitGraph,
   BarChart,
+  Settings,
 } from "lucide-react";
 import Link from "next/link";
-import { useParams } from "next/navigation";
-import { usePathname } from "next/navigation";
+import { useParams, usePathname } from "next/navigation";
 
 export const NavMain = () => {
   const { setOpenMobile } = useSidebar();
-  const { clientId, workspaceId } = useParams<{
-    clientId: string;
-    workspaceId: string;
-  }>();
+  const { clientId } = useParams<{ clientId: string; workspaceId: string }>();
   const pathname = usePathname();
-  const isActive = (href: string) => pathname === `/${clientId}${href}`;
+  const isActive = (href: string) => pathname.endsWith(href);
 
   const mainItems = [
-    {
-      label: "Dashboard",
-      href: "/dashboard",
-      icon: Home,
-    },
-    {
-      label: "Projects",
-      href: "/projects",
-      icon: ListTodo,
-    },
-    {
-      label: "Kanban Board",
-      href: "/kanban-board",
-      icon: LayoutDashboard,
-    },
-    {
-      label: "Documents",
-      href: "/documents",
-      icon: File,
-    },
-    {
-      label: "Analytics",
-      href: "/add-members",
-      icon: BarChart,
-    },
+    { label: "Dashboard", href: "/dashboard", icon: Home },
+    { label: "Projects", href: "/projects", icon: ListTodo },
+    { label: "Kanban Board", href: "/kanban-board", icon: LayoutDashboard },
+    { label: "Documents", href: "/documents", icon: File },
+    { label: "Analytics", href: "/add-members", icon: BarChart },
   ];
 
   return (
     <SidebarGroup className="flex h-full flex-col">
+      {/* ---------- Main Menu ---------- */}
       <SidebarMenu className="space-y-3">
         {mainItems.map((el) => (
           <SidebarMenuItem key={el.label}>
             <SidebarMenuButton
               asChild
               tooltip={el.label}
-              className={`px-3 py-2 rounded-lg transition-colors
-    ${isActive(el.href)
-                  ? "bg-blue-50 text-blue-600"
-                  : "text-muted-foreground hover:bg-gray-100"
-                }
-  `}
+              className={`px-3 py-2 rounded-lg transition-colors ${
+                isActive(el.href)
+                  ? "bg-blue-50 text-blue-600 dark:bg-blue-700 dark:text-blue-100"
+                  : "text-muted-foreground hover:bg-gray-100 dark:text-muted-foreground dark:hover:bg-gray-800"
+              }`}
             >
               <Link
                 href={el.href}
@@ -83,8 +54,11 @@ export const NavMain = () => {
                 className="flex items-center"
               >
                 <el.icon
-                  className={`mr-2 h-6 w-6 ${isActive(el.href) ? "text-blue-600" : "text-gray-500"
-                    }`}
+                  className={`mr-2 h-6 w-6 ${
+                    isActive(el.href)
+                      ? "text-blue-700 dark:text-blue-100"
+                      : "text-gray-500 dark:text-gray-400"
+                  }`}
                 />
                 <span className="font-semibold">{el.label}</span>
               </Link>
@@ -96,18 +70,35 @@ export const NavMain = () => {
       {/* ---------- Bottom Section ---------- */}
       <div className="mt-auto pt-4 border-t">
         <SidebarMenu className="space-y-2">
+          {/* Settings */}
           <SidebarMenuItem>
-            <SidebarMenuButton asChild tooltip="Settings">
+            <SidebarMenuButton
+              asChild
+              tooltip="Settings"
+              className={`px-3 py-2 rounded-lg transition-colors ${
+                pathname.endsWith("/settings")
+                  ? "bg-blue-50 text-blue-600 dark:bg-blue-700 dark:text-blue-100"
+                  : "text-muted-foreground hover:bg-gray-100 dark:text-muted-foreground dark:hover:bg-gray-800"
+              }`}
+            >
               <Link
-                href={`/${clientId}/settings`}
+                href="/settings"
                 onClick={() => setOpenMobile(false)}
+                className="flex items-center"
               >
-                <Settings className="mr-2 h-6 w-6" />
+                <Settings
+                  className={`mr-2 h-6 w-6 ${
+                    pathname.endsWith("/settings")
+                      ? "text-blue-700 dark:text-blue-100"
+                      : "text-gray-500 dark:text-gray-400"
+                  }`}
+                />
                 <span className="font-semibold">Settings</span>
               </Link>
             </SidebarMenuButton>
           </SidebarMenuItem>
 
+          {/* Log out */}
           <SidebarMenuItem>
             <SidebarMenuButton
               tooltip="Log out"

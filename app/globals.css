@@ -114,3 +114,10 @@ a {
     @apply bg-background text-foreground;
   }
 }
+[data-radix-popper-content-wrapper] > div {
+  @apply bg-blue-50 text-blue-700 border font-semibold border-blue-100;
+}
+
+.dark [data-radix-popper-content-wrapper] > div {
+  @apply bg-blue-700 text-blue-100 border border-blue-600;
+}

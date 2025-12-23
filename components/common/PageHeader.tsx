@@ -10,13 +10,13 @@ import {
   BreadcrumbPage,
   BreadcrumbSeparator,
 } from "@/components/ui/breadcrumb";
-import { BreadcrumbItemType, PageHeaderProps } from "@/lib/types";
+import { BreadcrumbItemType, PageHeaderProps } from "@/lib/types/types";
 
 export default function PageHeader({ title, breadcrumbs }: PageHeaderProps) {
   return (
     <div className="mb-6">
       {/* Title */}
-      <h1 className="text-3xl font-bold text-[#424794]">{title}</h1>
+      <h1 className="text-3xl font-bold text-blue-600 dark:text-blue-500">{title}</h1>
 
       {/* Breadcrumbs */}
       {breadcrumbs && (

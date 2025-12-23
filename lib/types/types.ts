@@ -149,3 +149,16 @@ type ProjectStatus =
 export interface ProjectGroup {
   projectId: Project;
 }
+
+
+// --------------------- PageHeaderProps Types ---------------------
+
+export interface BreadcrumbItemType {
+  label: string;
+  href?: string;
+}
+
+export interface PageHeaderProps {
+  title: string;
+  breadcrumbs?: BreadcrumbItemType[];
+}

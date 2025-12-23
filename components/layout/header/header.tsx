@@ -13,7 +13,7 @@ export const Header = () => {
   const [notificationCount, setNotificationCount] = useState(3);
 
   return (
-    <nav className="w-full flex items-center justify-between px-4 py-[13px] bg-transparent border-b shadow-sm">
+    <nav className="w-full flex items-center justify-between px-4 py-[13px] bg-transparent border-b shadow-sm dark:bg-[rgb(19_35_55/1)]">
       <div className="flex items-center gap-2 w-1/2">
         <SidebarTrigger /> {/* Added trigger here */}
       </div>

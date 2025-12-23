@@ -93,7 +93,7 @@ a {
     --chart-3: 30 80% 55%;
     --chart-4: 280 65% 60%;
     --chart-5: 340 75% 55%;
-    --sidebar-background: 240 5.9% 10%;
+    --sidebar-background: rgb(19 35 55 / 1);
     --sidebar-foreground: 240 4.8% 95.9%;
     --sidebar-primary: 224.3 76.3% 48%;
     --sidebar-primary-foreground: 0 0% 100%;
@@ -120,4 +120,9 @@ a {
 
 .dark [data-radix-popper-content-wrapper] > div {
   @apply bg-blue-700 text-blue-100 border border-blue-600;
+}
+
+.sidebar-dark {
+  background-color: rgb(var(--sidebar-background));
+  color: rgb(var(--sidebar-foreground));
 }

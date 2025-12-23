@@ -14,9 +14,12 @@ export const AppSidebar = () => {
   const { state } = useSidebar();
 
   return (
-    <Sidebar collapsible="icon" className=" border-r">
+    <Sidebar collapsible="icon" className=" border-r ">
       {/* ---------- Header / Logo ---------- */}
-      <SidebarHeader className="bg-white dark:bg-transparent border-b">
+      <SidebarHeader
+        className="bg-white  border-b dark:bg-[rgb(19_35_55/1)]"
+       
+      >
         <div className="flex justify-center">
           {state === "expanded" ? (
             <img
@@ -25,7 +28,6 @@ export const AppSidebar = () => {
               className="w-[160px] rounded-md"
             />
           ) : (
-            
             <Image
               src="/logo-sm.webp"
               alt="Logo"
@@ -38,7 +40,7 @@ export const AppSidebar = () => {
       </SidebarHeader>
 
       {/* ---------- Content ---------- */}
-      <SidebarContent className="flex flex-col bg-background ">
+      <SidebarContent className="flex flex-col bg-background dark:bg-[rgb(19_35_55/1)]">
         <NavMain />
       </SidebarContent>
     </Sidebar>

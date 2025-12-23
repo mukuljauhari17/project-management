@@ -7,7 +7,7 @@ import {
   SidebarMenuButton,
   SidebarMenuItem,
   useSidebar,
-} from "../ui/sidebar";
+} from "../../ui/sidebar";
 import {
   CheckSquare,
   ClipboardList,
@@ -79,7 +79,8 @@ export const NavMain = () => {
   `}
             >
               <Link
-                href={`/${clientId}${el.href}`}
+                // href={`/${clientId}${el.href}`}
+                href={el.href}
                 onClick={() => setOpenMobile(false)}
                 className="flex items-center"
               >

@@ -1,50 +1,16 @@
 "use client";
 
-import {
-  Bell,
-  ChevronLeft,
-  Plus,
-  PlusCircle,
-  Search,
-  Settings,
-} from "lucide-react";
-;
+import { Search, Settings } from "lucide-react";
 import Link from "next/link";
-import {
-  DropdownMenu,
-  DropdownMenuContent,
-  DropdownMenuItem,
-  DropdownMenuTrigger,
-  DropdownMenuSub,
-  DropdownMenuSubContent,
-  DropdownMenuSubTrigger,
-  DropdownMenuSeparator,
-} from "@/components/ui/dropdown-menu";
-
-
 import { useState } from "react";
-import { CheckSquare, Bug, ClipboardCheck, Calendar } from "lucide-react";
-
 import UserNav from "./UserNav";
-
-import { useParams } from "next/navigation";
-import { Separator } from "../ui/separator";
-import { Button } from "../ui/button";
-import { SidebarTrigger } from "../ui/sidebar";
-import { Input } from "../ui/input";
-import { ThemeToggle } from "../common/site-theme/theme-toggle";
-
+import { Button } from "@/components/ui/button";
+import { SidebarTrigger } from "@/components/ui/sidebar";
+import { Input } from "@/components/ui/input";
+import { ThemeToggle } from "@/components/common/site-theme/theme-toggle";
 
 export const Header = () => {
-    const { workspaceId } = useParams<{ workspaceId: string }>();
-  const { clientId } = useParams<{ clientId: string }>();
-  const [openTaskDialog, setOpenTaskDialog] = useState(false);
-  const [openBugDialog, setOpenBugDialog] = useState(false);
-  const [openSprintDialog, setOpenSprintDialog] = useState(false);
-  const [openNewSprintDialog, setOpenNewSprintDialog] = useState(false);
-
   const [notificationCount, setNotificationCount] = useState(3);
-
 
   return (
     <nav className="w-full flex items-center justify-between px-4 py-[11px] bg-transparent border-b shadow-sm">
@@ -62,12 +28,12 @@ export const Header = () => {
       {/* Right: theme, settings, bell, avatar */}
       <div className="flex items-center gap-3">
         <ThemeToggle />
-          <Button variant="ghost" size="icon" asChild>
-           <Link href={`/${clientId}/settings`}>
-              <Settings className="h-8 w-8" />
-            </Link>
-          </Button>
-     
+        <Button variant="ghost" size="icon" asChild>
+          <Link href="/settings">
+            <Settings className="h-8 w-8" />
+          </Link>
+        </Button>
+
         {/* Notification with badge */}
         {/* <div className="relative">
           <Button variant="ghost" size="icon">

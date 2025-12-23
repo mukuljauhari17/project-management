@@ -2,8 +2,8 @@ import React from 'react'
 import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover";
 import Link from 'next/link';
 
-import { useRouter, useParams } from "next/navigation";import { Button } from '../ui/button';
-import { Separator } from '../ui/separator';
+import { useRouter, useParams } from "next/navigation";import { Button } from '@/components/ui/button';
+import { Separator } from '@/components/ui/separator';
 ;
 
 const UserNav = () => {

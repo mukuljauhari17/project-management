@@ -1,8 +1,8 @@
 import { redirect } from "next/navigation";
 import React from "react";
 import { SidebarProvider, SidebarTrigger } from "@/components/ui/sidebar"
-import { AppSidebarContainer } from "@/components/sidebar/app-sidebar-container"
-import { Header } from "@/components/header/header";
+import { AppSidebarContainer } from "@/components/layout/sidebar/app-sidebar-container"
+import { Header } from "@/components/layout/header/header";
 
 
 

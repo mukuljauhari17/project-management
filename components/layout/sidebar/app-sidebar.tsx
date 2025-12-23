@@ -7,7 +7,7 @@ import {
   SidebarHeader,
   SidebarFooter,
   useSidebar,
-} from "../ui/sidebar";
+} from "../../ui/sidebar";
 import { NavMain } from "./nav-main";
 
 export const AppSidebar = () => {

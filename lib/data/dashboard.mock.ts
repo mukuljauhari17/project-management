@@ -1,7 +1,7 @@
 
 // ----------------- MOCK DATA -----------------
 
-import { DashboardStats, ProjectProgress, RecentTask } from "@/lib/types";
+import { DashboardStats, ProjectProgress, RecentTask } from "@/lib/types/types";
 import { AlertCircle, Check, ClipboardList, Users } from "lucide-react";
 
 
@@ -145,3 +145,44 @@ export const mockTasks = [
       data: [4, 10, 8, 3], // Example data matching your image
     },
   ];
+
+
+export const pinnedprojects = [
+  {
+    title: "Q4 Marketing Campaign",
+    image:
+      "https://images.unsplash.com/photo-1557804506-669a67965ba0?auto=format&fit=crop&w=1200&q=80",
+    status: "In Progress",
+    statusVariant: "secondary",
+    progress: 75,
+    tags: ["Marketing", "Campaign", "Strategy"],
+  },
+  {
+    title: "Website Redesign 2024",
+    image:
+      "https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=1200&q=80",
+    status: "Review",
+    statusVariant: "outline",
+    progress: 90,
+    tags: ["UI/UX", "Development", "Frontend"],
+  },
+  {
+    title: "Product Feature Launch",
+    image:
+      "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1200&q=80",
+    status: "Upcoming",
+    statusVariant: "secondary",
+    progress: 20,
+    tags: ["Product", "Launch", "Feature"],
+  },
+  {
+    title: "Customer Support Portal",
+    image:
+      "https://images.unsplash.com/photo-1525182008055-f88b95ff7980?auto=format&fit=crop&w=1200&q=80",
+    status: "Live",
+    statusVariant: "default",
+    progress: 100,
+    tags: ["Support", "Helpdesk", "CRM"],
+  },
+];
+

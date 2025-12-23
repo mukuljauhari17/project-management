@@ -1,6 +1,6 @@
 "use client";
 
-import { Search, Settings } from "lucide-react";
+import { Bell, Search, Settings } from "lucide-react";
 import Link from "next/link";
 import { useState } from "react";
 import UserNav from "./UserNav";
@@ -28,23 +28,16 @@ export const Header = () => {
       {/* Right: theme, settings, bell, avatar */}
       <div className="flex items-center gap-3">
         <ThemeToggle />
-        <Button variant="ghost" size="icon" asChild>
-          <Link href="/settings">
-            <Settings className="h-8 w-8" />
-          </Link>
-        </Button>
-
         {/* Notification with badge */}
-        {/* <div className="relative">
+        <div className="relative">
           <Button variant="ghost" size="icon">
             <Bell className="h-6 w-6" />
           </Button>
           {notificationCount > 0 && (
             <span className="absolute top-1 -right-1 inline-flex items-center justify-center w-4 h-4 text-xs font-bold text-white bg-red-600 rounded-full">
-              {notificationCount}
-            </span>
+              2</span>
           )}
-        </div> */}
+        </div>
 
         <UserNav />
       </div>

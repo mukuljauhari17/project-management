@@ -64,30 +64,27 @@ export const NavMain = () => {
 
   return (
     <SidebarGroup className="flex h-full flex-col">
-      <SidebarMenu className="space-y-3 ml-2">
+      <SidebarMenu className="space-y-3">
         {mainItems.map((el) => (
           <SidebarMenuItem key={el.label}>
             <SidebarMenuButton
               asChild
               tooltip={el.label}
               className={`px-3 py-2 rounded-lg transition-colors
-    ${
-      isActive(el.href)
-        ? "bg-blue-50 text-blue-600"
-        : "text-muted-foreground hover:bg-gray-100"
-    }
+    ${isActive(el.href)
+                  ? "bg-blue-50 text-blue-600"
+                  : "text-muted-foreground hover:bg-gray-100"
+                }
   `}
             >
               <Link
-                // href={`/${clientId}${el.href}`}
                 href={el.href}
                 onClick={() => setOpenMobile(false)}
                 className="flex items-center"
               >
                 <el.icon
-                  className={`mr-2 h-6 w-6 ${
-                    isActive(el.href) ? "text-blue-600" : "text-gray-500"
-                  }`}
+                  className={`mr-2 h-6 w-6 ${isActive(el.href) ? "text-blue-600" : "text-gray-500"
+                    }`}
                 />
                 <span className="font-semibold">{el.label}</span>
               </Link>
@@ -98,7 +95,7 @@ export const NavMain = () => {
 
       {/* ---------- Bottom Section ---------- */}
       <div className="mt-auto pt-4 border-t">
-        <SidebarMenu className="space-y-2 ml-2">
+        <SidebarMenu className="space-y-2">
           <SidebarMenuItem>
             <SidebarMenuButton asChild tooltip="Settings">
               <Link
@@ -116,7 +113,6 @@ export const NavMain = () => {
               tooltip="Log out"
               className="text-red-500 hover:text-red-600"
               onClick={() => {
-                // logout logic
                 console.log("logout");
               }}
             >

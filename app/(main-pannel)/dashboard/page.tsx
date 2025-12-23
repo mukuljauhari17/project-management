@@ -11,7 +11,7 @@ import ProjectProgress from "@/components/features/dashboard/project-progress";
 import ProjectType from "@/components/features/dashboard/project-type";
 
 export default function Home() {
-  
+
   return (
     <>
       {/* Header */}
@@ -21,29 +21,6 @@ export default function Home() {
 
       <WelcomeCard />
 
-      {/* Section - 1 */}
-      <StatsGrid />
-
-      {/* Section - 2 */}
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-6">
-        <CompletionChart />
-        <LiveTaskChart />
-      </div>
-
-      {/* Section - 3 */}
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-6">
-        <RecentActivity />
-        <QuickActions />
-      </div>
-
-      {/* Section - 4 */}
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-4">
-        <ProjectType />
-        <ProjectProgress />
-      </div>
-
-      {/* section - 5 */}
-      <PinnedProjects />
     </>
   );
 }
